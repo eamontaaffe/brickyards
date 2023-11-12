@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import { title } from '../config';
+import bromleyImageFive from '../images/bromley-5.png';
+import arrowImage from '../images/arrow.svg';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<title>{ title }</title>
+
+        <style>
+            @font-face {
+                font-family: Maria;
+                src: url("Maria.ttf") format("truetype");
+            }
+
+            @font-face {
+                font-family: ABCBingo;
+                src: url("ABCBingo-Bold-Trial.otf") format("opentype");
+            }
+        </style>
+	</head>
+	<body class="bg-background">
+        <div class="p-4">
+
+            {/* Header */}
+
+            <div class="w-full flex justify-between mb-16">
+                <div><span class="inline-block h-full text-xl font-body uppercase font-medium align-middle">Hepburn Springs</span></div>
+                <h1 class="text-6xl font-display uppercase">{ title }</h1>
+                <a class="text-xl font-body uppercase font-medium" href="/book">Book Now</a>
+            </div>
+
+            {/* Carosel */}
+
+            <div class="flex justify-center border-1 border-black border-solid">
+                <Image class="rotate-180 mr-12 w-22 md:w-28 lg:w-40" src={arrowImage} alt="arrow icon" />
+                <div class="shrink">
+                    <Image src={bromleyImageFive} alt="The creative interiors toe the line between moody and bright. Photo - Sean McDonald" />
+                </div>
+                <Image class="ml-12 w-22 md:w-28 lg:w-40" src={arrowImage} alt="arrow icon" />
+            </div>
+
+
+        </div>
+	</body>
+</html>
