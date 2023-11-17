@@ -9,6 +9,7 @@ export default {
           'body': ['Maria', 'Helvetica', 'sans-serif'],
         },
         colors: {
+          black: '#000000',
           background: '#d8d1c6',
         },
 	},
