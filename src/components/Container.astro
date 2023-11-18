@@ -2,6 +2,8 @@
 const { class: className } = Astro.props;
 ---
 
-<div class:list={["m-auto max-w-[800px]", className]}>
-    <slot />
+<div class:list={["mx-4 content-center flex justify-center", className]}>
+    <div class="max-w-[800px]">
+        <slot />
+    </div>
 </div>

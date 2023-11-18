@@ -2,8 +2,8 @@
 const { title } = Astro.props;
 ---
 
-<div class="p-4 w-full flex justify-between mb-12">
-    <div class="md:text-xl font-body uppercase font-medium flex-grow basis-1/4">
+<div class="p-4 w-full flex justify-between mb-4 md:mb-12">
+    <div class="collapse md:visible md:text-xl font-body uppercase font-medium flex-grow basis-1/4">
         <a
             class="hover:border-b-4 active:bg-black active:text-background"
             href="/#hepburn-springs">Hepburn Springs</a
@@ -13,12 +13,12 @@ const { title } = Astro.props;
         class="text-4xl md:text-6xl font-display uppercase basis-1/2 text-center"
     >
         <a
-            class="hover:border-b-[6px] active:bg-black active:text-background"
+            class="hover:border-b-4 md:hover:border-b-[6px] active:bg-black active:text-background"
             href="/">{title}</a
         >
     </h1>
     <div
-        class="md:text-xl font-body uppercase font-medium flex-grow text-right basis-1/4"
+        class="collapse md:visible md:text-xl font-body uppercase font-medium flex-grow text-right basis-1/4"
     >
         <a
             class="hover:border-b-4 active:bg-black active:text-background"
