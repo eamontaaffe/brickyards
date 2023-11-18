@@ -1,17 +1,56 @@
 ---
-import { Image } from 'astro:assets';
-import aboriginalFlag from '../images/aboriginal-flag.svg'
+import { Image } from "astro:assets";
+import Divider from "../components/Divider.astro";
+import Container from "../components/Container.astro";
+import aboriginalFlag from "../images/aboriginal-flag.svg";
 ---
-<div">
+
+<Divider />
+
+<Container class="pb-12 text-sm">
     <div class="text-center mb-4">
-        <a href="/contact">Contact</a>
-        |
-        <a href="/privacy">Privacy</a>
-        |
-        <a href="/terms">Terms & Conditions</a>
+        <a
+            class="hover:border-b-2 active:bg-black active:text-background"
+            href="https://wishlistproperties.com.au">Wishlist Properties</a
+        >
     </div>
-    <Image class="m-auto w-6 mb-4" src={ aboriginalFlag } alt="Australian Aboriginal flag" />
-    <div class="text-center text-xs px-16">
-        We acknowledge the Dja Dja Wurrung as the Traditional Owners of the lands and waters on which we live and work. We pay our deepest respects to Elders past, present and emerging and extend our respect to Aboriginal and Torres Strait Islander people from all nations of this land. Always was, always will be Aboriginal land.
+
+    <div class="text-center mb-4">
+        <a
+            class="hover:border-b-2 active:bg-black active:text-background"
+            href="/contact">Contact</a
+        >
+         |
+        <a
+            class="hover:border-b-2 active:bg-black active:text-background"
+            href="/#about">About</a
+        >
+         |
+        <a
+            class="hover:border-b-2 active:bg-black active:text-background"
+            href="/privacy">Privacy</a
+        >
+         |
+        <a
+            class="hover:border-b-2 active:bg-black active:text-background"
+            href="/terms">Terms & Conditions</a
+        >
+         |
+        <a
+            class="hover:border-b-2 active:bg-black active:text-background"
+            href="/blog">Blog</a
+        >
     </div>
-<div>
+    <Image
+        class="m-auto w-6 mb-4"
+        src={aboriginalFlag}
+        alt="Australian Aboriginal flag"
+    />
+    <div class="text-center px-16">
+        We acknowledge the Dja Dja Wurrung as the Traditional Owners of the
+        lands and waters on which we live and work. We pay our deepest respects
+        to Elders past, present and emerging and extend our respect to
+        Aboriginal and Torres Strait Islander people from all nations of this
+        land. Always was, always will be Aboriginal land.
+    </div>
+</Container>

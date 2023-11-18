@@ -1,32 +1,35 @@
 ---
-import { title } from '../config';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import { title } from "../config";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const { frontmatter } = Astro.props;
-const frontmatterTitle = title + ' — ' + frontmatter?.title;
+const frontmatterTitle = title + " — " + frontmatter?.title;
+
+const isProd = import.meta.env.PROD;
 ---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>{ frontmatter?.title ? frontmatterTitle : title }</title>
+        <title>{frontmatter?.title ? frontmatterTitle : title}</title>
 
         <style>
-         @font-face {
-             font-family: Maria;
-             src: url("/Maria.ttf") format("truetype");
-         }
+            @font-face {
+                font-family: Maria;
+                src: url("/Maria.ttf") format("truetype");
+            }
 
-         @font-face {
-             font-family: ABCBingo;
-             src: url("/ABCBingo-Bold-Trial.otf") format("opentype");
-         }
+            @font-face {
+                font-family: ABCBingo;
+                src: url("/ABCBingo-Bold-Trial.otf") format("opentype");
+            }
         </style>
-	</head>
-	<body class="bg-background">
+    </head>
+    <body class="bg-background font-body">
         <Header title={title} />
 
         <div class="my-16">
@@ -35,8 +38,14 @@ const frontmatterTitle = title + ' — ' + frontmatter?.title;
 
         <Footer />
 
-        <!-- Cloudflare Web Analytics -->
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "68f410a7411b49a5986882daa768f555"}'></script>
-        <!-- End Cloudflare Web Analytics -->
-	</body>
+        {
+            isProd && (
+                <script
+                    defer
+                    src="https://static.cloudflareinsights.com/beacon.min.js"
+                    data-cf-beacon='{"token": "68f410a7411b49a5986882daa768f555"}'
+                />
+            )
+        }
+    </body>
 </html>

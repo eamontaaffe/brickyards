@@ -1,21 +1,233 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { Image } from 'astro:assets';
-import { title } from '../config';
-import bromleyImageFive from '../images/bromley-5.png';
-import arrowImage from '../images/arrow.svg';
+import { Image } from "astro:assets";
+import { title } from "../config";
+import headlineImage from "../images/IMG_3709.png";
+import gardenHouseImage from "../images/garden-house-resize.png";
+import residenceImage from "../images/residence.png";
+import studioImage from "../images/studio-resize.png";
+
+import Layout from "../layouts/Layout.astro";
+import Divider from "../components/Divider.astro";
+import Container from "../components/Container.astro";
+import H2 from "../components/H2.astro";
+import A from "../components/A.astro";
+import Accomodation from "../components/Accomodation.astro";
+import LinkButton from "../components/LinkButton.astro";
 ---
 
 <Layout>
-    <div class="flex flex-row justify-center items-center min-h-fit my-16">
-        <div>
-            <span class="inline-block h-full text-xl font-body uppercase font-medium align-middle">
-                Hepburn Springs
-            </span>
-            <h1 class="text-6xl font-display uppercase">{ title }</h1>
-            <span class="text-xl font-body uppercase font-medium" href="/book">
-                Coming Soon
-            </span>
+    <!-- Headline -->
+
+    <Container>
+        <Image
+            class="mb-14 md:mb-20"
+            src={headlineImage}
+            alt="The Brickyards holiday rental."
+        />
+
+        <div class="md:flex text-center font-body uppercase">
+            <div class="basis-1/3 mx-6 my-4"
+            ><A href="https://maps.app.goo.gl/JprgdiQMQoxWMTPc6">21 — 25 Main Road, Hepburn Springs, Victoria 3461</A></div
+                                                                                                                  >
+            <div class="basis-1/3 mx-6 my-4"
+                >Art-inspired boutique accomodation in Hepburn Springs</div
+            >
+            <div class="basis-1/3 mx-6 my-4"
+            ><A href="https://wishlistproperties.com.au">Proudly hosted by Wishlist Properties</A>
+            </div>
         </div>
-    </div>
+    </Container>
+
+        <Divider />
+
+        <!-- Accomodation -->
+
+        <div class="m-auto max-w-[1200px]">
+            <h2
+                class="mt-16 mb-8 md:mt-20 md:mb-12 text-center text-3xl md:text-5xl font-display uppercase"
+            >
+                Accomodation
+            </h2>
+
+            <div class="md:flex font-body">
+                <Accomodation
+                    imageSrc={gardenHouseImage}
+                    imageAlt="The Brickyards Garden House"
+                    name="The Garden House"
+                    href="/#garden-house"
+                    suitable="Suitable for two couples."
+                >
+                    Wood. Clay. Stone. Spirit. These are the elements from
+                    which JB Blunk created his work, and a more elemental
+                    artist of the postwar era would be hard to find.
+                </Accomodation>
+
+                <Accomodation
+                    imageSrc={residenceImage}
+                    imageAlt="The Brickyards Residence"
+                    name="The Residence"
+                    href="/#residence"
+                    suitable="Suitable for two couples."
+                >
+                    Wood. Clay. Stone. Spirit. These are the elements from
+                    which JB Blunk created his work, and a more elemental
+                    artist of the postwar era would be hard to find.
+
+                </Accomodation>
+
+                <Accomodation
+                    imageSrc={studioImage}
+                    imageAlt="The Brickyards Studio"
+                    name="The Studio"
+                    href="/#studio"
+                    suitable="Suitable for one couple."
+                >
+                    Wood. Clay. Stone. Spirit. These are the elements from
+                    which JB Blunk created his work, and a more elemental
+                    artist of the postwar era would be hard to find.
+                </Accomodation>
+            </div>
+        </div>
+
+        <Divider />
+
+        <!-- Garden House -->
+
+        <Container>
+            <H2 id="garden-house">The Garden House</H2>
+            <Image
+                src={gardenHouseImage}
+                alt="The Brickyards Garden House"
+                width="800"
+            />
+            <div class="flex my-4">
+                <div class="basis-1/2">
+                    <p>
+                        Wood. Clay. Stone. Spirit. These are the ele- ments from which JB Blunk created his work, and a more elemental artist of the postwar era would be hard to find.
+                    </p>
+                    <LinkButton href="/book">Book Now</LinkButton>
+                </div>
+                <div class="basis-1/2">
+                    INCLUDED
+                    <ul>
+                        <li>Split system heating and cooling</li>
+                        <li>Luxury linen and towels</li>
+                        <li>Bodywash, shampoo and conditioner</li>
+                        <li>Tea and coffee provisions</li>
+                        <li>Continental breakfast provisions Microwave oven</li>
+                        <li>WIFI</li>
+                        <li>Netflix</li>
+                        <li>Bluetooth speaker</li>
+                    </ul>
+                </div>
+            </div>
+        </Container>
+
+        <Divider />
+
+        <!-- Residence -->
+
+        <Container>
+            <H2 id="residence">The Residence</H2>
+            <Image
+                src={residenceImage}
+                alt="The Brickyards Residence"
+                width="800"
+            />
+            <div class="flex my-4">
+                <div class="basis-1/2">
+                    <p>
+                        Wood. Clay. Stone. Spirit. These are the ele- ments from which JB Blunk created his work, and a more elemental artist of the postwar era would be hard to find.
+                    </p>
+                    <LinkButton href="/book">Book Now</LinkButton>
+                </div>
+                <div class="basis-1/2">
+                    INCLUDED
+                    <ul>
+                        <li>Split system heating and cooling</li>
+                        <li>Luxury linen and towels</li>
+                        <li>Bodywash, shampoo and conditioner</li>
+                        <li>Tea and coffee provisions</li>
+                        <li>Continental breakfast provisions Microwave oven</li>
+                        <li>WIFI</li>
+                        <li>Netflix</li>
+                        <li>Bluetooth speaker</li>
+                    </ul>
+                </div>
+            </div>
+        </Container>
+
+        <Divider />
+
+        <!-- Studio -->
+
+        <Container>
+            <H2 id="studio">The Studio</H2>
+            <Image
+                src={studioImage}
+                alt="The Brickyards Studio"
+                width="800"
+            />
+            <div class="flex my-4">
+                <div class="basis-1/2">
+                    <p>
+                        Wood. Clay. Stone. Spirit. These are the ele- ments from which JB Blunk created his work, and a more elemental artist of the postwar era would be hard to find.
+                    </p>
+
+                    <LinkButton href="/book">Book Now</LinkButton>
+                </div>
+                <div class="basis-1/2">
+                    INCLUDED
+                    <ul>
+                        <li>Split system heating and cooling</li>
+                        <li>Luxury linen and towels</li>
+                        <li>Bodywash, shampoo and conditioner</li>
+                        <li>Tea and coffee provisions</li>
+                        <li>Continental breakfast provisions Microwave oven</li>
+                        <li>WIFI</li>
+                        <li>Netflix</li>
+                        <li>Bluetooth speaker</li>
+                    </ul>
+                </div>
+            </div>
+        </Container>
+
+        <Divider />
+
+        <!-- Hepburn Sprints -->
+
+        <Container>
+            <H2 id="hepburn-springs">Hepburn Springs</H2>
+            <p>
+                Discover the charm of Hepburn Springs, a tranquil haven in
+                Victoria, Australia. Renowned for its therapeutic mineral
+                springs, this picturesque village is nestled amidst the lush
+                Macedon Ranges. Stroll through quaint streets, unwind in
+                rejuvenating spas, and savor local flavors in cozy cafes.
+                Surrounded by nature's beauty, engage in invigorating hikes or
+                simply relish the serene ambiance. Hepburn Springs is more than
+                a destination; it's an experience where relaxation meets
+                adventure, creating unforgettable memories.
+            </p>
+        </Container>
+
+        <Divider />
+
+        <!-- About Us -->
+
+        <div class="m-auto max-w-[800px]">
+            <H2 id="about">Our Story</H2>
+            <p>
+                Discover the charm of Hepburn Springs, a tranquil haven in
+                Victoria, Australia. Renowned for its therapeutic mineral
+                springs, this picturesque village is nestled amidst the lush
+                Macedon Ranges. Stroll through quaint streets, unwind in
+                rejuvenating spas, and savor local flavors in cozy cafes.
+                Surrounded by nature's beauty, engage in invigorating hikes or
+                simply relish the serene ambiance. Hepburn Springs is more than
+                a destination; it's an experience where relaxation meets
+                adventure, creating unforgettable memories.
+            </p>
+        </div>
+    </Container>
 </Layout>

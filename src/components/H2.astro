@@ -1,0 +1,13 @@
+---
+const { class: className, id } = Astro.props;
+---
+
+<h2
+    class:list={[
+        "mt-16 mb-8 md:mt-20 md:mb-12 text-center text-3xl md:text-5xl font-display uppercase",
+        className,
+    ]}
+    id={id}
+>
+    <slot />
+</h2>
